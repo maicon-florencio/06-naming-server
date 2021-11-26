@@ -1,0 +1,25 @@
+name: Continuous Integration with Github
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Log into docker hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ecrets.DOCKER_USERNAME}}
+          password: ${{ecrets.DOCKER_PASSWORD}}
+        
+       
