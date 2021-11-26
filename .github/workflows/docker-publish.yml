@@ -26,7 +26,7 @@ jobs:
         with:
           java-version: '16'
           distribution: 'adopt'
-          
-      - name: Building Eureka Naming Serve Container Image
-        working-directory: .\eclipse-workspace\06-naming-server
+
+      - name: Build Eureka Naming Server Container Image
+        working-directory: ./eclipse-workspace/06-naming-server
         run: mvn spring-boot:build-image -DskipTests
